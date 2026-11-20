@@ -1,0 +1,1256 @@
+{
+  "id": "macrokeybinds",
+  "name": "Macro Keybinds",
+  "version": "2.0.0",
+  "jar": "26.3-macrokeybinds-fabric-2.0.0.jar",
+  "verdict": "Partly convertible",
+  "counts": {
+    "auto": 4,
+    "content": 1,
+    "needs-mapping": 0,
+    "needs-translation": 24,
+    "unsupported": 0
+  },
+  "intermediary": false,
+  "entrypoints": {
+    "client": [
+      "com.thomas7520.macrokeybinds.FabricMacroMod"
+    ],
+    "modmenu": [
+      "com.thomas7520.macrokeybinds.modmenu.ModMenuIntegration"
+    ]
+  },
+  "features": [
+    {
+      "category": "event",
+      "in": "com/thomas7520/macrokeybinds/FabricMacroMod",
+      "detail": "KeyMappingHelper.registerKeyMapping",
+      "horizon": "hook `key`",
+      "status": "auto",
+      "note": "Mojang-named variant of KeyBindingHelper."
+    },
+    {
+      "category": "event",
+      "in": "com/thomas7520/macrokeybinds/event/MacroEvent",
+      "detail": "ClientTickEvents.END_CLIENT_TICK",
+      "horizon": "hook `tick`",
+      "status": "auto",
+      "note": "The Fabric API layer (jfabricapi.rs) runs START_CLIENT_TICK, then the level ticks (START/END_LEVEL_TICK, while in a world), then END_CLIENT_TICK, from Horizon's tick hook, in the window's Game only."
+    },
+    {
+      "category": "event",
+      "in": "com/thomas7520/macrokeybinds/event/MacroEvent",
+      "detail": "ClientPlayConnectionEvents.JOIN",
+      "horizon": "hook `tick`",
+      "status": "auto",
+      "note": "The Fabric API layer runs JOIN on the window's first tick with a player after none, DISCONNECT on the first tick without one after."
+    },
+    {
+      "category": "event",
+      "in": "com/thomas7520/macrokeybinds/event/MacroEvent",
+      "detail": "ClientPlayConnectionEvents.DISCONNECT",
+      "horizon": "hook `tick`",
+      "status": "auto",
+      "note": "The Fabric API layer runs JOIN on the window's first tick with a player after none, DISCONNECT on the first tick without one after."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/EditMacroScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/GlobalMacroScreen$1",
+      "detail": "extends Button",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/GlobalMacroScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/MainMacroScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/ServerMacroScreen$1",
+      "detail": "extends Button",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/ServerMacroScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/other/EditMacroFormList$Entry",
+      "detail": "extends Entry",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/other/EditMacroFormList",
+      "detail": "extends ContainerObjectSelectionList",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/other/MacroList$Entry",
+      "detail": "extends Entry",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/other/MacroList",
+      "detail": "extends ContainerObjectSelectionList",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelOptionScreen$SlotIconButton",
+      "detail": "extends AbstractButton",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelOptionScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectIconScreen$IconButton",
+      "detail": "extends AbstractWidget",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectIconScreen$IconGrid",
+      "detail": "extends ContainerObjectSelectionList",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectIconScreen$IconRow",
+      "detail": "extends Entry",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectIconScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectMacroScreen$MacroEntry",
+      "detail": "extends Entry",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectMacroScreen$MacroSelectionList",
+      "detail": "extends ContainerObjectSelectionList",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelSelectMacroScreen",
+      "detail": "extends Screen",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No general screen hook; simple option pages can use the settings hook."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelWidget$Slot",
+      "detail": "extends AbstractWidget",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/gui/wheel/WheelWidget",
+      "detail": "extends AbstractContainerWidget",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/util/widget/ButtonImageWidget",
+      "detail": "extends AbstractButton",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "class",
+      "in": "com/thomas7520/macrokeybinds/util/widget/CheckboxEdited",
+      "detail": "extends AbstractButton",
+      "horizon": null,
+      "status": "needs-translation",
+      "note": "No mapping for this superclass yet."
+    },
+    {
+      "category": "content",
+      "in": "jar resources",
+      "detail": "8 asset files, 0 data files",
+      "horizon": "content mod (.hmod)",
+      "status": "content",
+      "note": "Recipes, loot, tags, models, textures, worldgen: horizon-port-pack carries these."
+    }
+  ],
+  "mappedCalls": [
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Key#getDisplayName",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_core::key_display::display_name (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/KeyMapping#<init>",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "`self.native_mod_key(MOD_ID, name, default)`"
+    },
+    {
+      "java": "net/minecraft/client/KeyMapping#consumeClick",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "`key == self.native_mod_key(..) && pressed, in the key hook`"
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#font",
+      "kind": "field",
+      "uses": 4,
+      "horizon": "`(implicit)`"
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getInstance",
+      "kind": "method",
+      "uses": 9,
+      "horizon": "`self`"
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#player",
+      "kind": "field",
+      "uses": 2,
+      "horizon": "`self.native_player()`"
+    },
+    {
+      "java": "net/minecraft/client/OptionInstance#set",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::options_file::OptionsFile::set (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/gui/Font#plainSubstrByWidth",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::font::Font::fit (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/gui/Font#split",
+      "kind": "method",
+      "uses": 3,
+      "horizon": "horizon_client_render::font::Font::split_formatted (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/gui/Font#width",
+      "kind": "method",
+      "uses": 7,
+      "horizon": "`self.native_text_width(text)`"
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#blitSprite",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::ui::blit_sprite (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getScreenX",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::ui::EditBox::screen_x (suggested)"
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientPacketListener#sendChat",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client::game::remote::Game<'_>::send_chat (suggested)"
+    },
+    {
+      "java": "net/minecraft/core/registries/BuiltInRegistries#ITEM",
+      "kind": "field",
+      "uses": 3,
+      "horizon": "content"
+    },
+    {
+      "java": "net/minecraft/network/chat/MutableComponent#append",
+      "kind": "method",
+      "uses": 3,
+      "horizon": "horizon_client::game::dedicated::append (suggested)"
+    },
+    {
+      "java": "net/minecraft/network/chat/MutableComponent#withStyle",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_core::text::Text::with_style (suggested)"
+    },
+    {
+      "java": "net/minecraft/util/ARGB#white",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::hud_layout::white (suggested)"
+    },
+    {
+      "java": "net/minecraft/util/Mth#ceil",
+      "kind": "method",
+      "uses": 1,
+      "horizon": "horizon_client_render::hud_layout::ceil (suggested)"
+    },
+    {
+      "java": "net/minecraft/util/Mth#clamp",
+      "kind": "method",
+      "uses": 3,
+      "horizon": "horizon_client_render::chat::clamp (suggested)"
+    }
+  ],
+  "unmappedCalls": [
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants#UNKNOWN",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants#getKey",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants#isKeyDown",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Key#getType",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Key#getValue",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Type#KEYBOARD",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Type#MOUSE",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/InputConstants$Type#getOrCreate",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/Window#getGuiScaledHeight",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/Window#getGuiScaledWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/Window#getHeight",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "com/mojang/blaze3d/platform/Window#getWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#AQUA",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#GOLD",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#GRAY",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#GREEN",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#LIGHT_PURPLE",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#RED",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/ChatFormatting#YELLOW",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/GameNarrator#saySystemNow",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/InputType#isKeyboard",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/KeyMapping#isUnbound",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/KeyMapping#saveString",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/KeyMapping$Category#register",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getConnection",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getLastInputType",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getNarrator",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getSoundManager",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#getWindow",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#gui",
+      "kind": "field",
+      "uses": 10
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#level",
+      "kind": "field",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#mouseHandler",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/Minecraft#options",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/MouseHandler#xpos",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/MouseHandler#ypos",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/OptionInstance#get",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/Options#autoSuggestions",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/Gui#hud",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/Gui#screen",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/Gui#setScreen",
+      "kind": "method",
+      "uses": 10
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#blit",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#centeredText",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#fill",
+      "kind": "method",
+      "uses": 5
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#item",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#outline",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#pose",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#setTooltipForNextFrame",
+      "kind": "method",
+      "uses": 5
+    },
+    {
+      "java": "net/minecraft/client/gui/GuiGraphicsExtractor#text",
+      "kind": "method",
+      "uses": 11
+    },
+    {
+      "java": "net/minecraft/client/gui/Hud#getChat",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractButton#<init>",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractButton#createNarrationMessage",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractContainerWidget#<init>",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#<init>",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#extractRenderState",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#getRectangle",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#mouseClicked",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#playButtonClickSound",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/AbstractWidget#setPosition",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#<init>",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#active",
+      "kind": "field",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#builder",
+      "kind": "method",
+      "uses": 8
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#extractRenderState",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#getMessage",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#isHovered",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#setMessage",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#setPosition",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#setTooltip",
+      "kind": "method",
+      "uses": 5
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#setWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button#visible",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button$Builder#bounds",
+      "kind": "method",
+      "uses": 8
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Button$Builder#build",
+      "kind": "method",
+      "uses": 8
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ChatComponent#addClientSystemMessage",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ContainerObjectSelectionList#<init>",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ContainerObjectSelectionList#getRowWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ContainerObjectSelectionList#mouseClicked",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ContainerObjectSelectionList#scrollBarX",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/ContainerObjectSelectionList$Entry#<init>",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#<init>",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#addFormatter",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getCursorPosition",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getHeight",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getInnerWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getValue",
+      "kind": "method",
+      "uses": 6
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getX",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#getY",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#isFocused",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setCursorPosition",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setHighlightPos",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setMaxLength",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setResponder",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setSuggestion",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setValue",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#setWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/EditBox#visible",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/components/StringWidget#<init>",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/StringWidget#getWidth",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/StringWidget#setPosition",
+      "kind": "method",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/components/Tooltip#create",
+      "kind": "method",
+      "uses": 6
+    },
+    {
+      "java": "net/minecraft/client/gui/components/events/GuiEventListener#isMouseOver",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/narration/NarratedElementType#TITLE",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/narration/NarratedElementType#USAGE",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/narration/NarrationElementOutput#add",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/ChatScreen#<init>",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/ConfirmLinkScreen#confirmLinkNow",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/ConfirmScreen#<init>",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#<init>",
+      "kind": "method",
+      "uses": 8
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#extractRenderState",
+      "kind": "method",
+      "uses": 6
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#height",
+      "kind": "field",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#init",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#keyPressed",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#keyReleased",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#mouseClicked",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#mouseScrolled",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#onClose",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#resize",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#tick",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/Screen#width",
+      "kind": "field",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/inventory/tooltip/BelowOrAboveWidgetTooltipPositioner#<init>",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/gui/screens/inventory/tooltip/DefaultTooltipPositioner#INSTANCE",
+      "kind": "field",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/client/input/KeyEvent#hasShiftDown",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/input/KeyEvent#isDown",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/input/KeyEvent#isEscape",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/input/KeyEvent#isUp",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/input/KeyEvent#key",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/input/MouseButtonEvent#button",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/input/MouseButtonEvent#x",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/input/MouseButtonEvent#y",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientPacketListener#getCommands",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientPacketListener#getServerData",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientPacketListener#getSuggestionsProvider",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientPacketListener#sendCommand",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ClientSuggestionProvider#getCustomTabSuggestions",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ServerData#ip",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/multiplayer/ServerData#isLan",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/player/LocalPlayer#connection",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#<init>",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#contains",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#getHeight",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#getWidth",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#getX",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/Rect2i#getY",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/client/renderer/RenderPipelines#GUI_TEXTURED",
+      "kind": "field",
+      "uses": 4
+    },
+    {
+      "java": "net/minecraft/commands/Commands#getParseException",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/commands/SharedSuggestionProvider#suggest",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/core/DefaultedRegistry#entrySet",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/core/DefaultedRegistry#getOptional",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/network/chat/CommonComponents#EMPTY",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/CommonComponents#GUI_CANCEL",
+      "kind": "field",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/network/chat/CommonComponents#GUI_DONE",
+      "kind": "field",
+      "uses": 5
+    },
+    {
+      "java": "net/minecraft/network/chat/CommonComponents#NEW_LINE",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#copy",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#empty",
+      "kind": "method",
+      "uses": 6
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#getString",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#getVisualOrderText",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#literal",
+      "kind": "method",
+      "uses": 8
+    },
+    {
+      "java": "net/minecraft/network/chat/Component#translatable",
+      "kind": "method",
+      "uses": 15
+    },
+    {
+      "java": "net/minecraft/network/chat/ComponentUtils#fromMessage",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/network/chat/MutableComponent#getString",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/MutableComponent#getVisualOrderText",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/Style#EMPTY",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/network/chat/Style#withColor",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/resources/Identifier#fromNamespaceAndPath",
+      "kind": "method",
+      "uses": 5
+    },
+    {
+      "java": "net/minecraft/resources/Identifier#toString",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/resources/Identifier#tryParse",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/resources/Identifier#withDefaultNamespace",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/resources/ResourceKey#identifier",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/util/FormattedCharSequence#composite",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/util/FormattedCharSequence#forward",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/world/item/Item#getDefaultInstance",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/world/item/ItemStack#EMPTY",
+      "kind": "field",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/world/item/ItemStack#getHoverName",
+      "kind": "method",
+      "uses": 2
+    },
+    {
+      "java": "net/minecraft/world/item/ItemStack#isEmpty",
+      "kind": "method",
+      "uses": 3
+    },
+    {
+      "java": "net/minecraft/world/phys/Vec2#<init>",
+      "kind": "method",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/world/phys/Vec2#ZERO",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/world/phys/Vec2#x",
+      "kind": "field",
+      "uses": 1
+    },
+    {
+      "java": "net/minecraft/world/phys/Vec2#y",
+      "kind": "field",
+      "uses": 1
+    }
+  ],
+  "warnings": []
+}
